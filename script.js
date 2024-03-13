@@ -181,5 +181,43 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
+const leftButton = document.getElementById('leftButton');
+const rightButton = document.getElementById('rightButton');
+const fireButton = document.getElementById('fireButton');
+let moveLeftInterval;
+let moveRightInterval;
+let fireInterval;
+
+leftButton.addEventListener('touchstart', () => {
+    moveLeftInterval = setInterval(() => {
+        playerShip.moveLeft();
+    }, 30);
+});
+
+leftButton.addEventListener('touchend', () => {
+    clearInterval(moveLeftInterval);
+});
+
+rightButton.addEventListener('touchstart', () => {
+    moveRightInterval = setInterval(() => {
+        playerShip.moveRight();
+    }, 30);
+});
+
+rightButton.addEventListener('touchend', () => {
+    clearInterval(moveRightInterval);
+});
+
+fireButton.addEventListener('touchstart', () => {
+    fireInterval = setInterval(() => {
+        playerShip.fire();
+    }, 50);
+});
+
+fireButton.addEventListener('touchend', () => {
+    clearInterval(fireInterval);
+});
+
+
 // Iniciar o jogo
 gameLoop();
