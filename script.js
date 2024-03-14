@@ -1,7 +1,7 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 const canvasWidth = canvas.width = 400;
-const canvasHeight = canvas.height = 600;
+const canvasHeight = canvas.height = 500;
 // Variável de estado para controlar se o jogo está em andamento
 let jogoEmAndamento = true;
 // Variável para armazenar a pontuação
